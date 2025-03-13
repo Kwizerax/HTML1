@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome to my Page | About Me</title>
+    <style>
+        body {
+            background-color: rgb(141, 200, 202);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        a:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            margin-right: 15px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin: 0;
+            display: inline-block;
+        }
+
+        /* About Me Section */
+        .about-me {
+            position: absolute;
+            top: 50%;
+            left: 200px;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+        }
+
+        .about2-me {
+            position: absolute;
+            top: 60%;
+            left: 200px;
+            font-size: 22px;
+            color: white;
+        }
+
+        /* Skills Section Styles */
+        .container {
+            width: 80%;
+            margin: 500px auto;  /* Increased the margin-top to push the Skills section even further down */
+        }
+
+        .skills {
+            margin-top: 40px;
+        }
+
+        .skill {
+            margin-bottom: 15px;  /* Reduced margin */
+        }
+
+        .skill-name {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        /* Progress Bar Styles */
+        .progress-bar-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 10px;
+            height: 15px;  /* Smaller height */
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            text-align: center;
+            color: white;
+            line-height: 15px;  /* Smaller line-height */
+            border-radius: 10px;
+        }
+
+        .html {
+            background-color: #E44D26;
+        }
+
+        .css {
+            background-color: #264DE4;
+        }
+
+        .javascript {
+            background-color: #F7DF1E;
+        }
+
+        .react {
+            background-color: #61DAFB;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-right">
+        <h2><a href="http://127.0.0.1:5500/HTML%20Website.html">Login</a></h2>
+        <h2><a href="http://127.0.0.1:5500/about.html">About Me</a></h2>
+        <h2><a href="http://127.0.0.1:5500/Profession.html">Future Profession</a></h2>
+        <h2><a href="http://127.0.0.1:5500/Contacts.html">Contact Us</a></h2>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="about-me">
+        <h1>Hi! I'm Taylor<br />a Graphic Designer</h1>
+    </div>
+    <div class="about2-me">
+        <p><strong>I develop websites as well as games</strong></p>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="container">
+        <h2>My Skills</h2>
+        <div class="skills">
+            <!-- Skill 1: HTML -->
+            <div class="skill">
+                <div class="skill-name">HTML</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar html" style="width: 90%;">90%</div>
+                </div>
+            </div>
+
+            <!-- Skill 2: CSS -->
+            <div class="skill">
+                <div class="skill-name">CSS</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar css" style="width: 85%;">85%</div>
+                </div>
+            </div>
+
+            <!-- Skill 3: JavaScript -->
+            <div class="skill">
+                <div class="skill-name">JavaScript</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar javascript" style="width: 75%;">75%</div>
+                </div>
+            </div>
+
+            <!-- Skill 4: React -->
+            <div class="skill">
+                <div class="skill-name">React</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar react" style="width: 70%;">70%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
