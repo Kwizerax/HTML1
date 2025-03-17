@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <title>Welcome to my Page | About Me</title>
+</head>
     <style>
         body {
-            background-color: rgb(141, 200, 202);
+            background-color: #136F63;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -52,10 +55,132 @@
             color: white;
         }
 
+        .skills-me {
+            position: absolute;
+            top: 65%;
+            left: 190px;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+        }
+
+        /* Background Rectangle1 */
+        .rectangle1 {
+            position: absolute;
+            top: 12%;
+            right: 0;
+            width: 1000px;
+            height: 550px;
+            background-color: #259485;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+                /* Background Rectangle1-5 */
+                .rectangle1-5 {
+            position: absolute;
+            top: 25%;
+            right: 0;
+            width: 980px;
+            height: 550px;
+            background-color: #3cafa0;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 80%;
+            font-size: 18px;
+        }
+
+        /* Image 1 */
+                .rectangle2 {
+            position: absolute;
+            top: 20%;
+            right: 0;
+            width: 950px;
+            height: 500px;
+            background-image: url('https://as2.ftcdn.net/jpg/05/81/38/53/1000_F_581385398_t6Bp2iQTQg3kQz3XZ0tfnr8s85P4h4XX.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* Background Rectangle2 */
+                .rectangle3 {
+            position: absolute;
+            top: 30%;
+            right: 200px;
+            width: 380px;
+            height: 550px;
+            background-color: #af1717;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+
+        }
+                /* Image 2 */
+                .rectangle4 {
+            position: absolute;
+            top: 31%;
+            right: 215px;
+            width: 350px;
+            height: 525px;
+            background-image: url('istockphoto-1445187641-612x612 (1).jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+                /* Background Rectangle3 */
+                .rectangle4-5 {
+            position: absolute;
+            top: 10%; 
+            right: 800px;
+            width: 350px;
+            height: 350px;
+            background-color: #a51717;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+                /* Image 3 */
+                .rectangle5 {
+            position: absolute;
+            top: 10%; 
+            right: 800px;
+            width: 325px;
+            height: 325px;
+            background-image: url('https://img.freepik.com/premium-vector/human-red-eyeball-vector-illustration-graphic-design-projects_1339081-13648.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
         /* Skills Section Styles */
         .container {
             width: 80%;
-            margin: 500px auto;  /* Increased the margin-top to push the Skills section even further down */
+            margin: 680px auto;
         }
 
         .skills {
@@ -63,7 +188,7 @@
         }
 
         .skill {
-            margin-bottom: 15px;  /* Reduced margin */
+            margin-bottom: 15px;
         }
 
         .skill-name {
@@ -73,10 +198,10 @@
 
         /* Progress Bar Styles */
         .progress-bar-container {
-            width: 100%;
+            width: 35%;
             background-color: #ddd;
             border-radius: 10px;
-            height: 15px;  /* Smaller height */
+            height: 15px;
             overflow: hidden;
         }
 
@@ -85,31 +210,47 @@
             width: 0;
             text-align: center;
             color: white;
-            line-height: 15px;  /* Smaller line-height */
+            line-height: 15px;
             border-radius: 10px;
         }
 
         .html {
-            background-color: #E44D26;
+            background-color: #DD2323;
         }
 
         .css {
-            background-color: #264DE4;
+            background-color: #DD2323;
         }
 
         .javascript {
-            background-color: #F7DF1E;
+            background-color: #DD2323;
         }
 
         .react {
-            background-color: #61DAFB;
+            background-color: #DD2323;
         }
+
+        /* Zigzag Line Above Text */
+    .zigzag-line {
+        position: absolute;
+        top: 40%; 
+        left: 200px;
+        width: 10%;
+        height: 20px; 
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        background-image: linear-gradient(45deg, transparent 75%, #ffffff 75%);
+        background-size: 10px 10px;
+        background-repeat: repeat-x;
+    }
     </style>
 </head>
 
 <body>
     <div class="top-right">
-        <h2><a href="http://127.0.0.1:5500/HTML%20Website.html">Login</a></h2>
+        <h2><a href="http://127.0.0.1:5500/Login.html">Login</a></h2>
         <h2><a href="http://127.0.0.1:5500/about.html">About Me</a></h2>
         <h2><a href="http://127.0.0.1:5500/Profession.html">Future Profession</a></h2>
         <h2><a href="http://127.0.0.1:5500/Contacts.html">Contact Us</a></h2>
@@ -125,7 +266,9 @@
 
     <!-- Skills Section -->
     <div class="container">
-        <h2>My Skills</h2>
+        <div class="skills-me">
+            <p><em><strong>My Skills</strong></em></p>
+        </div>
         <div class="skills">
             <!-- Skill 1: HTML -->
             <div class="skill">
@@ -160,5 +303,119 @@
             </div>
         </div>
     </div>
+    <div class="rectangle1"></div>
+    <div class="rectangle1-5"></div>
+    <div class="rectangle2"></div>
+    <div class="rectangle3"></div>
+    <div class="rectangle4"></div>
+    <div class="rectangle4-5"></div>
+    <div class="rectangle5"></div>
+    <div class="zigzag-line"></div>
+
+    <style>
+        .about-section {
+            position: absolute; 
+            width: 80%;
+            margin: 0 auto;
+            padding: 40px;
+            top: 900px; 
+        }
+        .about-section h1, .about-section h2 {
+            color: #e9f0e2;
+        }
+        .about-section h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .about-section h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .about-section p {
+            font-size: 18px;
+            color: white;
+            line-height: 1.6;
+        }
+        .about-section .services-list {
+            list-style: none;
+            color: white;
+            padding: 0;
+        }
+        .about-section .services-list li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .about-section .highlight {
+            color: #4cb82c;
+            font-weight: bold;
+        }
+        .about-section .bio-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="about-section">
+    <h1>About Taylor</h1>
+    <img src="your-image-path.jpg" alt="Taylor's Picture" class="bio-image"> <!-- Replace with Taylor's image -->
+    <p><strong>Hi, I'm Taylor, a passionate graphic designer with a keen eye for creativity and a love for innovative design.</strong></p>
+
+    <p>
+        From a young age, I was always fascinated by colors, shapes, and how they come together to form something beautiful. 
+        My journey into graphic design began with experimenting in digital art during my teenage years, and soon enough, 
+        I realized that this was the path I wanted to pursue professionally.</p>
+
+    <p>
+        I studied graphic design at <span class="highlight">[University Name]</span>, where I honed my skills in visual communication, typography, branding, and digital media. 
+        After graduating, I worked with several design agencies, where I had the privilege of collaborating with talented teams and creating designs for some incredible brands. 
+        Over time, I have gained experience across a variety of industries, including fashion, technology, 
+        and entertainment, developing everything from logos and websites to print materials and social media graphics.
+    </p>
+
+    <p>
+        I love the process of turning an idea into something visually stunning. For me, 
+        design is about more than just aesthetics—it's about solving problems and creating experiences that resonate with people. 
+        My goal is to create designs that are not only visually appealing but also functional and meaningful.
+    </p>
+
+    <h2>My Approach to Design</h2>
+    <p>
+        Design is all about storytelling. I believe that every design has a story to tell, whether it's a brand logo, a website, or a simple poster. 
+        I work closely with my clients to understand their vision, values, and goals, ensuring that every project reflects their unique identity and message.
+    </p>
+
+    <p>
+        I take a minimalist approach to design, focusing on clarity, balance, and harmony. I'm passionate about using the right combination of typography, 
+        color schemes, and imagery to create designs that capture attention and communicate messages effectively.
+    </p>
+
+    <h2>Services I Offer</h2>
+    <ul class="services-list">
+        <li><strong>Branding & Identity Design:</strong> I help businesses create a strong brand presence, from logo design to complete brand guidelines.</li>
+        <li><strong>Web & App Design:</strong> I design user-friendly websites and mobile applications that provide seamless user experiences.</li>
+        <li><strong>Print Design:</strong> From business cards to brochures and posters, I create eye-catching print materials.</li>
+        <li><strong>Illustration & Digital Art:</strong> Custom illustrations for a unique, personal touch to your brand.</li>
+        <li><strong>UI/UX Design:</strong> I create intuitive interfaces and smooth user experiences that drive engagement and usability.</li>
+    </ul>
+
+    <h2>Why Choose Me?</h2>
+    <p>
+        With over <span class="highlight">[X]</span> years of experience in the design world, I bring a fresh and creative perspective to each project. 
+        Whether you're a startup looking to build your brand or an established company in need of a design refresh, I am here to help bring your vision to life.
+    </p>
+    <p>
+        Outside of work, I love exploring new design trends, attending design conferences, and getting inspired by nature and art. 
+        When I'm not designing, you can find me traveling, sketching, or diving into my next creative project.
+    </p>
+    <p>
+        If you're looking for a designer who is passionate, innovative, and committed to delivering exceptional work, 
+        let's collaborate and create something amazing together!
+    </p>
+</div>
+
 </body>
 </html>
