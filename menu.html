@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Slow fade-in animation */
+        body {
+            opacity: 0; /* Start as invisible */
+            animation: fadeIn 5s forwards; /* Fade in over 5 seconds */
+        }
+
+        /* Fade-in keyframes */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Background animation */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.pinimg.com/originals/cb/71/a0/cb71a099b3ca06a3797f32f4af4c9011.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: gifBackground 15s infinite;
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        /* Welcome message slide and fade-out effect */
+        .welcome-message {
+            position: absolute;
+            top: -100px; /* Start much higher, above the screen */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 80px; /* Make the text much bigger */
+            font-weight: bold; /* Make it bold */
+            color: white;
+            opacity: 0;
+            animation: slideIn 4s ease-out, fadeOut 3s 4s forwards; /* Slower slide and fade */
+        }
+
+        /* Slide down animation */
+        @keyframes slideIn {
+            0% {
+                top: -100px; /* Start above the screen */
+                opacity: 0;
+            }
+            50% {
+                top: 150px; /* Move to a position 150px from the top */
+                opacity: 1;
+            }
+            100% {
+                top: 150px;
+                opacity: 1;
+            }
+        }
+
+        /* Fade-out after 4 seconds */
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Menu layout */
+        body {
+            background-color: #034c52;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        /* Container for the menu */
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the menu items horizontally */
+            justify-content: center; /* Center the menu container vertically */
+        }
+
+        /* Individual menu item styles */
+        .menu-item {
+            color: white;
+            padding: 12px 24px;
+            margin: 5px 0;
+            font-size: 18px;
+            border: 2px solid #5cafd6;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s ease, transform 0.2s ease;
+            background-color: transparent;
+        }
+
+        /* Hover effect for the menu items */
+        .menu-item:hover {
+            border-color: #ca2222;
+            transform: scale(1.05);
+        }
+
+        /* Active effect to simulate button press */
+        .menu-item:active {
+            border-color: #3b7a9c;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <!-- Welcome Message -->
+    <div class="welcome-message">
+        Welcome!
+    </div>
+
+    <div class="menu-container">
+        <button class="menu-item" onclick="window.location.href='http://127.0.0.1:5500/about.html'">My Profile</button>
+        <button class="menu-item" onclick="window.location.href='https://www.example2.com'">Projects</button>
+        <button class="menu-item" onclick="window.location.href='https://www.example3.com'">Services</button>
+        <button class="menu-item" onclick="window.location.href='https://www.example4.com'">Contact Me</button>
+    </div>
+
+    <script>
+        // JavaScript functionality can be added here if needed
+    </script>
+
+</body>
+</html>
