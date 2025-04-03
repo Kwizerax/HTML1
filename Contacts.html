@@ -1,4 +1,7 @@
 <head>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
 <style>
     a:link {
@@ -6,11 +9,182 @@
       background-color: transparent;
       text-decoration: none;
     }
+.top-right {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            margin-right: 15px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin: 0;
+            display: inline-block;
+        }
     </style>
     </head>
     <body>
-    
-        <a href="http://127.0.0.1:5500/HTML%20Website.html">Login  </a>
-        <a href="http://127.0.0.1:5500/about.html"> About Me </a> 
-        <a href="http://127.0.0.1:5500/Profession.html"> Future Profession </a>
-        <a href="http://127.0.0.1:5500/Contacts.html"> Contact Us </a> 
+    <div class="top-right">
+        <h2><a href="http://127.0.0.1:5500/Login.html">Login</a></h2>
+        <h2><a href="http://127.0.0.1:5500/about.html">About Me</a></h2>
+        <h2><a href="http://127.0.0.1:5500/Profession.html">Future Profession</a></h2>
+        <h2><a href="http://127.0.0.1:5500/Contacts.html">Contact Us</a></h2>
+    </div>
+
+        <style>
+          body {
+              font-family: Arial, sans-serif;
+              background-color: #f4f4f4;
+              margin: 0;
+              padding: 0;
+          }
+  
+          header {
+              background-color: #2d6860;
+              color: white;
+              text-align: center;
+              padding: 20px 0;
+          }
+  
+          header h1 {
+              margin: 0;
+              font-size: 36px;
+          }
+  
+          /* Contact Form Section */
+          .contact-container {
+              display: flex;
+              justify-content: space-around;
+              margin: 40px 20px;
+              padding: 20px;
+          }
+  
+          .contact-form {
+              width: 50%;
+              background-color: white;
+              padding: 20px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              border-radius: 8px;
+          }
+  
+          .contact-form h2 {
+              margin-bottom: 20px;
+              color: #333;
+          }
+  
+          .form-field {
+              margin-bottom: 15px;
+          }
+  
+          .form-field label {
+              display: block;
+              margin-bottom: 5px;
+              font-weight: bold;
+          }
+  
+          .form-field input, .form-field textarea {
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ddd;
+              border-radius: 4px;
+              font-size: 16px;
+          }
+  
+          .form-field textarea {
+              resize: vertical;
+              height: 150px;
+          }
+  
+          .form-field input[type="submit"] {
+              background-color: #2d6860;
+              color: white;
+              border: none;
+              cursor: pointer;
+              padding: 10px 20px;
+              font-size: 16px;
+              transition: background-color 0.3s;
+          }
+  
+          .form-field input[type="submit"]:hover {
+              background-color: #1f4f44;
+          }
+  
+          /* Contact Information Section */
+          .contact-info {
+              width: 40%;
+              background-color: white;
+              padding: 20px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              border-radius: 8px;
+          }
+          .contact-info h3 {
+              color: #333;
+              margin-bottom: 20px;
+          }
+          .contact-info p {
+              font-size: 16px;
+              color: #555;
+              margin-bottom: 15px;
+          }
+          .contact-info i {
+              color: #2d6860;
+              margin-right: 10px;
+          }
+          /* Responsive Design */
+          @media (max-width: 768px) {
+              .contact-container {
+                  flex-direction: column;
+                  align-items: center;
+              }
+  
+              .contact-form, .contact-info {
+                  width: 80%;
+                  margin-bottom: 20px;
+              }
+          }
+      </style>
+  </head>
+  <body>
+  <header>
+    <h1 class="section-header-container" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+      Contact me
+  </h1>
+  </header>
+  <div class="contact-container">
+      <!-- Contact Form -->
+      <div class="contact-form">
+          <h2>Get in Touch</h2>
+          <form action="submit_form.php" method="POST">
+              <div class="form-field">
+                  <label for="name">Your Name:</label>
+                  <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-field">
+                  <label for="email">Your Email:</label>
+                  <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-field">
+                  <label for="message">Your Message:</label>
+                  <textarea id="message" name="message" required></textarea>
+              </div>
+              <div class="form-field">
+                  <input type="submit" value="Send Message">
+              </div>
+          </form>
+      </div>
+      <!-- Contact Info -->
+      <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p><i class="fa fa-envelope"></i>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+          <p><i class="fa fa-phone"></i>Phone: +1 (555) 123-4567</p>
+          <p><i class="fa fa-map-marker"></i>Address: 1234 Example Street, City, Country</p>
+      </div>
+  </div>
+  <!-- Add FontAwesome for icons (email, phone, location) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </body>
+  </html
