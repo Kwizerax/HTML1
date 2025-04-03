@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll-following Elements</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            height: 200vh; /* Make the page scrollable */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            flex-direction: column;
+        }
+
+        /* Style for moving elements */
+        .moving-element {
+            width: 100px;
+            height: 100px;
+            background-color: #ff6347;
+            border-radius: 50%;
+            position: fixed;  /* Fixed positioning to follow as you scroll */
+            top: 20%; /* Start slightly lower, closer to the center */
+            left: 5%; /* Start from the left side */
+            transition: transform 0.1s ease-out, border-radius 0.3s ease, width 0.3s ease, height 0.3s ease; /* Added transition for width and height */
+        }
+
+        .second-moving-element {
+            width: 100px;
+            height: 100px;
+            background-color: #4682b4;
+            border-radius: 50%;
+            position: fixed;  /* Fixed positioning to follow as you scroll */
+            top: 20%; /* Start slightly lower, closer to the center */
+            right: 5%; /* Start from the right side */
+            transition: transform 0.1s ease-out, border-radius 0.3s ease, width 0.3s ease, height 0.3s ease; /* Added transition for width and height */
+        }
+
+        /* Class for morphing into wider vertical rectangles */
+        .morphed {
+            border-radius: 10px; /* Change from circle to rectangle */
+            width: 150px;  /* Make the width slightly smaller than before */
+            height: 180px; /* Make the rectangle a little taller */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Moving elements -->
+    <div class="moving-element"></div>
+    <div class="second-moving-element"></div>
+
+    <script>
+        // Get the moving elements
+        const movingElement = document.querySelector('.moving-element');
+        const secondMovingElement = document.querySelector('.second-moving-element');
+
+        // Set the maximum scroll position when the morph happens
+        const maxScrollPosition = 300; // You can adjust this value based on when you want to trigger the morph
+
+        let isMorphingTriggered = false; // Track if morphing has been triggered
+
+        // Function to handle scroll movement
+        function handleScroll() {
+            // Get the scroll position
+            const scrollPosition = window.scrollY;
+
+            // Calculate the movement based on scroll position
+            const moveX = scrollPosition * 0.7; // Move horizontally (increase this for more distance)
+            const moveY = scrollPosition * 0.25; // Move vertically (keep this for consistent distance)
+
+            // Apply the calculated position to the elements
+            movingElement.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            secondMovingElement.style.transform = `translate(-${moveX}px, ${moveY}px)`;
+
+            // Check if the elements have finished moving and are at their max scroll position
+            if (scrollPosition >= maxScrollPosition && !isMorphingTriggered) {
+                // Trigger morphing (morph only once)
+                movingElement.classList.add('morphed');
+                secondMovingElement.classList.add('morphed');
+                isMorphingTriggered = true; // Prevent repeated morphing
+
+                // Move the elements further to the sides after morphing
+                movingElement.style.transform = `translate(${moveX + 300}px, ${moveY}px)`; // Shift to the right more
+                secondMovingElement.style.transform = `translate(-${moveX + 300}px, ${moveY}px)`; // Shift to the left more
+            }
+
+            // If scroll position is less than maxScrollPosition, make sure they are circles again
+            if (scrollPosition < maxScrollPosition && isMorphingTriggered) {
+                movingElement.classList.remove('morphed');
+                secondMovingElement.classList.remove('morphed');
+                isMorphingTriggered = false; // Allow morphing again if scrolling back
+
+                // Reset the transformations for circles
+                movingElement.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                secondMovingElement.style.transform = `translate(-${moveX}px, ${moveY}px)`;
+            }
+        }
+
+        // Listen for the scroll event
+        window.addEventListener('scroll', handleScroll);
+    </script>
+
+</body>
+</html>
