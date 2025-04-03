@@ -5,12 +5,70 @@
 <head>
     <title>Welcome to my Page | About Me</title>
 </head>
+
+<body>
+    <link rel="stylesheet" href="styles.css">
+</head>
+  <div class="background"></div>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body, html {
+      height: 100%;
+      width: 100%;
+    }
+    
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExem5vM2RyM2x4OTY3OG5vMXAwbGRndzU2aXhtbnEyNzQzeXU3NGhxbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/D6rllTsdhPNnzu1F15/giphy.gif'), 
+        url('https://i.pinimg.com/originals/1f/cb/2c/1fcb2ce0943eef7bfd3b23a92e6aae29.gif'), 
+        url('https://www.gifcen.com/wp-content/uploads/2022/09/cyberpunk-edgerunners-gif.gif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation: gifBackground 15s infinite;
+      opacity: 0.1;
+      z-index: -1;
+    }
+    
+@keyframes gifBackground {
+      0% {
+        background-position: 0% 0%, 100% 0%, 200% 0%;
+      }
+      33% {
+        background-position: 0% 0%, 100% 0%, 200% 0%;
+      }
+      34% {
+        background-position: -100% 0%, 0% 0%, 100% 0%;
+      }
+      66% {
+        background-position: -100% 0%, 0% 0%, 100% 0%;
+      }
+      67% {
+        background-position: -200% 0%, -100% 0%, 0% 0%;
+      }
+      100% {
+        background-position: -200% 0%, -100% 0%, 0% 0%;
+      }
+    }
+    </style>    
+</body>
+
     <style>
         body {
-            background-color: #136F63;
+            background-color: #2d6860;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            overflow: auto;
         }
 
         a:link {
@@ -229,31 +287,12 @@
         .react {
             background-color: #DD2323;
         }
-
-        /* Zigzag Line Above Text */
-    .zigzag-line {
-        position: absolute;
-        top: 40%; 
-        left: 200px;
-        width: 10%;
-        height: 20px; 
-        border-top: 4px solid transparent;
-        border-bottom: 4px solid transparent;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        background-image: linear-gradient(45deg, transparent 75%, #ffffff 75%);
-        background-size: 10px 10px;
-        background-repeat: repeat-x;
-    }
     </style>
 </head>
 
 <body>
     <div class="top-right">
-        <h2><a href="http://127.0.0.1:5500/Login.html">Login</a></h2>
-        <h2><a href="http://127.0.0.1:5500/about.html">About Me</a></h2>
-        <h2><a href="http://127.0.0.1:5500/Profession.html">Future Profession</a></h2>
-        <h2><a href="http://127.0.0.1:5500/Contacts.html">Contact Us</a></h2>
+        <h2><a href="http://127.0.0.1:5500/menu.html">Menu</a></h2>
     </div>
 
     <!-- About Me Section -->
@@ -310,7 +349,6 @@
     <div class="rectangle4"></div>
     <div class="rectangle4-5"></div>
     <div class="rectangle5"></div>
-    <div class="zigzag-line"></div>
 
     <style>
         .about-section {
@@ -318,7 +356,7 @@
             width: 80%;
             margin: 0 auto;
             padding: 40px;
-            top: 900px; 
+            top: 950px; 
         }
         .about-section h1, .about-section h2 {
             color: #e9f0e2;
@@ -387,12 +425,10 @@
         Design is all about storytelling. I believe that every design has a story to tell, whether it's a brand logo, a website, or a simple poster. 
         I work closely with my clients to understand their vision, values, and goals, ensuring that every project reflects their unique identity and message.
     </p>
-
     <p>
         I take a minimalist approach to design, focusing on clarity, balance, and harmony. I'm passionate about using the right combination of typography, 
         color schemes, and imagery to create designs that capture attention and communicate messages effectively.
     </p>
-
     <h2>Services I Offer</h2>
     <ul class="services-list">
         <li><strong>Branding & Identity Design:</strong> I help businesses create a strong brand presence, from logo design to complete brand guidelines.</li>
@@ -401,7 +437,6 @@
         <li><strong>Illustration & Digital Art:</strong> Custom illustrations for a unique, personal touch to your brand.</li>
         <li><strong>UI/UX Design:</strong> I create intuitive interfaces and smooth user experiences that drive engagement and usability.</li>
     </ul>
-
     <h2>Why Choose Me?</h2>
     <p>
         With over <span class="highlight">[X]</span> years of experience in the design world, I bring a fresh and creative perspective to each project. 
@@ -416,6 +451,5 @@
         let's collaborate and create something amazing together!
     </p>
 </div>
-
 </body>
 </html>
