@@ -1,27 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Future Profession</title>
-    <style>
-    a:link {
-      color: green;
-      background-color: transparent;
-      text-decoration: none;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Box with Glitch Text</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
     }
-    </style>
-    </head>
-    <body>
-    
-        <a href="http://127.0.0.1:5500/HTML%20Website.html">Login</a>
-        <a href="http://127.0.0.1:5500/about.html">About Me</a> 
-        <a href="http://127.0.0.1:5500/Profession.html">Projects</a>
-        <a href="http://127.0.0.1:5500/Contacts.html">Contact Us </a> 
-    
-    </body>
-    <body>
-        <h1>Hi! I'm ......<br />a coding student</h1>
-        <p>
-            I'm learning Python and HTML
-        </p>
-    </body>
-    
-    
-    
+
+    .container {
+      height: 40em;
+      width: 100vw;
+      background-color: rgb(0, 0, 0);
+      position: relative;
+      top: 5%;
+      left: 0;
+      padding: 2em;
+      z-index: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    .red-bar {
+      height: 33.33%;
+      width: 150%;
+      background-color: #2D6860;
+      position: absolute;
+      left: 120%;
+      top: 0;
+      z-index: -1;
+      transition: transform 1.5s;
+    }
+
+    .lightblue-bar {
+      height: 100%;
+      width: 100%;
+      background-color: #af1717;
+      position: absolute;
+      left: 0%;
+      top: 100%;
+      z-index: -1;
+      transition: transform 1.5s;
+    }
+
+    .profile-bar {
+      height: 20%;
+      width: 20%;
+      background-color: #747c7b;
+      position: absolute;
+      right: 100%;
+      top: 40%;
+      z-index: -1;
+      transition: transform 1.5s;
+    }
+
+    .profile-bar2 {
+      height: 20%;
+      width: 20%;
+      background-color: #747c7b;
+      position: absolute;
+      left: 100%;
+      top: 40%;
+      z-index: -1;
+      transition: transform 1.5s;
+    }
+
+    .container:hover .aqua-bar {
+      transform: translateY(100%);
+    }
+
+    .container:hover .red-bar {
+      transform: translateX(-100%);
+    }
+
+    .container:hover .profile-bar {
+      transform: translateX(150%);
+    }
+
+    .container:hover .profile-bar2 {
+      transform: translateX(-150%);
+    }
+
+    .container:hover .lightblue-bar {
+      transform: translateY(-33.33%);
+    }
+
+    .heading {
+      z-index: 20;
+      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4em;
+      transition: color 0.1s;
+      position: absolute;
+      top: -2%;
+      left: 0;
+      padding: 1em;
+    }
+
+    .glitch-btn {
+      padding: 16px 20px;
+      font-size: 60px;
+      background: linear-gradient(45deg, transparent 5%, #000000 5%);
+      border: 0;
+      color: #fff;
+      letter-spacing: 3px;
+      line-height: 1;
+      box-shadow: 6px 0px 0px #00ffb1;
+      outline: transparent;
+      position: relative;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition: transform 0.2s ease;
+    }
+
+    .glitch-btn::after {
+      --slice-0: inset(50% 50% 50% 50%);
+      --slice-1: inset(80% -6px 0 0);
+      --slice-2: inset(50% -6px 30% 0);
+      --slice-3: inset(10% -6px 85% 0);
+      --slice-4: inset(40% -6px 43% 0);
+      --slice-5: inset(80% -6px 5% 0);
+      content: "PROJECTS";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 3%, #00ffb1 3%, #00ffb1 5%, #000000 5%);
+      text-shadow: -3px -3px 0px #ff0000, 3px 3px 0px #00e6f6;
+      clip-path: var(--slice-0);
+    }
+
+    .glitch-btn:hover::after {
+      animation: 2s glitch;
+      animation-timing-function: steps(2, end);
+    }
+
+    @keyframes glitch {
+      0% { clip-path: var(--slice-1); transform: translate(-20px, -10px); }
+      10% { clip-path: var(--slice-3); transform: translate(10px, 10px); }
+      20% { clip-path: var(--slice-1); transform: translate(-10px, 10px); }
+      30% { clip-path: var(--slice-3); transform: translate(0px, 5px); }
+      40% { clip-path: var(--slice-2); transform: translate(-5px, 0px); }
+      50% { clip-path: var(--slice-3); transform: translate(5px, 0px); }
+      60% { clip-path: var(--slice-4); transform: translate(5px, 10px); }
+      70% { clip-path: var(--slice-2); transform: translate(-10px, 10px); }
+      80% { clip-path: var(--slice-5); transform: translate(20px, -10px); }
+      90% { clip-path: var(--slice-1); transform: translate(-10px, 0px); }
+      100% { clip-path: var(--slice-1); transform: translate(0); }
+    }
+
+    .glitch-btn:hover {
+      box-shadow: 15px #00ffb1;
+      transform: scale(1.05);
+    }
+
+    .glitch-btn:focus {
+      outline: none;
+    }
+
+    .target-section {
+      height: 50vh;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+      text-align: center;
+      max-width: 900px;
+      line-height: 1.6;
+      margin: 480px auto 0 auto;
+    }
+
+    .target-square {
+      width: 200px;
+      height: 200px;
+      background-color: #333;
+      margin-top: -500px; /* Moves it higher */
+      margin-left: -100px; /* Moves it to the left */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="profile-bar"></div>
+    <div class="profile-bar2"></div>
+    <div class="red-bar"></div>
+    <div class="lightblue-bar"></div>
+    <button class="glitch-btn" onclick="scrollToTarget()">PROJECTS</button>
+  </div>
+
+  <h1 class="heading">MENU</h1>
+
+  <div id="target-section" class="target-section">
+    <div class="target-square"></div>
+  </div>
+
+  <script>
+    function scrollToTarget() {
+      document.getElementById('target-section').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  </script>
+
+</body>
+</html>
