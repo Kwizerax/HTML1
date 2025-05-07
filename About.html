@@ -394,13 +394,61 @@
             border-radius: 50%;
             margin-bottom: 20px;
         }
+
+        body {
+            opacity: 0;
+            animation: fadeIn 5s forwards;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #2d6860;
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: gifBackground 15s infinite;
+            opacity: 0.7;
+            z-index: -1;
+        }
+        @keyframes slideIn {
+            0% {
+                top: -100px;
+                opacity: 0;
+            }
+            50% {
+                top: 150px;
+                opacity: 1;
+            }
+            100% {
+                top: 150px;
+                opacity: 1;
+            }
+        }
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="about-section">
     <h1>About Taylor</h1>
-    <img src="your-image-path.jpg" alt="Taylor's Picture" class="bio-image"> <!-- Replace with Taylor's image -->
+    <img src="ChatGPT Image May 8, 2025, 07_00_09 AM.png" alt="Taylor's Picture" class="bio-image"> <!-- Replace with Taylor's image -->
     <p><strong>Hi, I'm Taylor, a passionate graphic designer with a keen eye for creativity and a love for innovative design.</strong></p>
 
     <p>
