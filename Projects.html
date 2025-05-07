@@ -7,14 +7,14 @@
     html, body {
       margin: 0;
       padding: 0;
-      overflow: hidden; /* Prevent scrolling */
+      overflow: hidden;
       font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      height: 100%; /* Ensure the page takes up full height */
+      background-color: #5ba299;
+      height: 100%;
     }
 
     .container {
-      height: 100vh; /* Use full viewport height */
+      height: 100vh;
       width: 100vw;
       background-color: rgb(0, 0, 0);
       position: relative;
@@ -70,10 +70,6 @@
       transition: transform 1.5s;
     }
 
-    .container:hover .aqua-bar {
-      transform: translateY(100%);
-    }
-
     .container:hover .red-bar {
       transform: translateX(-100%);
     }
@@ -95,7 +91,6 @@
       font-weight: bold;
       font-family: 'Poppins', sans-serif;
       font-size: 1.4em;
-      transition: color 0.1s;
       position: absolute;
       top: -2%;
       left: 0;
@@ -164,8 +159,8 @@
     }
 
     .target-section {
-      height: 50vh;
-      background-color: #ffffff;
+      height: 100vh;
+      background-color: #5ba299;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -173,19 +168,7 @@
       text-align: center;
       max-width: 900px;
       line-height: 1.6;
-      margin: 600px auto 0 auto; /* Increased margin-top for much lower positioning */
-    }
-
-  .text-block {
-      font-size: 8em;
-      color: #000000;
-      position: relative;
-      top: calc(60vh - 150px); /* Positions it right above the "Project Cards" */
-      left: 50%;
-      transform: translateX(-50%);
-      font-weight: bold;
-      text-align: center;
-      font-family: fantasy, sans-serif; /* Changed to Fantasy font */
+      margin: 600px auto 0 auto;
     }
 
     .card {
@@ -199,22 +182,38 @@
     }
 
     .card button {
-      height: 100%;
-      flex: 1;
-      overflow: hidden;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: all .3s ease;
-      background: transparent;
-      border: 3px solid #ff5a91;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0;
-      color: inherit;
-      font-size: 2.5em;
-      font-family: inherit;
+  height: 150%;
+  flex: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all .3s ease;
+  background: transparent;
+  border: 3px solid #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  color: inherit;
+  font-size: 2.5em;
+  font-family: inherit;
+  background-size: cover;
+  background-position: center;
+  position: relative; /* Add this to control positioning */
+  top: -100px; /* Adjust this value to move the buttons up or down */
+}
+
+    .project-btn1 {
+      background-image: url('https://i.pinimg.com/originals/51/4f/3f/514f3fccb71047d780be491c435a79e1.gif');
+    }
+
+    .project-btn2 {
+      background-image: url('https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif');
+    }
+
+    .project-btn3 {
+      background-image: url('https://media.giphy.com/media/xT0Gqs9WkTw5K4CzIk/giphy.gif');
     }
 
     .card button:hover {
@@ -230,18 +229,71 @@
       transform: rotate(-90deg);
       transition: all .5s;
       text-transform: uppercase;
-      color: #ff568e;
+      color: #af1717;
       letter-spacing: .1em;
+      
     }
 
     .card button:hover span {
       transform: rotate(0);
     }
+
+    /* Back to Top button (initially hidden) */
+    #backToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 1em 2em;
+      font-size: 1.2em;
+      background-color: #00ffb1;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+
+    #backToTopBtn:hover {
+      opacity: 1;
+    }
+
+    a:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            margin-right: 15px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin: 0;
+            display: inline-block;
+        }
+
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <div class="top-right">
+    <h2><a href="http://127.0.0.1:5500/menu.html">Menu</a></h2>
+  </div>
+
+  <div class="container" id="top-section">
     <div class="profile-bar"></div>
     <div class="profile-bar2"></div>
     <div class="red-bar"></div>
@@ -249,18 +301,16 @@
     <button class="glitch-btn" onclick="scrollToTarget()">PROJECTS</button>
   </div>
 
-  <h1 class="heading">MENU</h1>
-
-  <!-- Text block instead of black square -->
-  <div class="text-block">Designs & Artworks</div>
-
   <div id="target-section" class="target-section">
     <div class="card">
-      <button><span>Project 1</span></button>
-      <button><span>Project 2</span></button>
-      <button><span>Project 3</span></button>
+      <button class="project-btn1"><span>Project 1</span></button>
+      <button class="project-btn2"><span>Project 2</span></button>
+      <button class="project-btn3"><span>Project 3</span></button>
     </div>
   </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
 
   <script>
     function scrollToTarget() {
@@ -268,8 +318,218 @@
         behavior: 'smooth',
         block: 'start'
       });
+
+      // Show the Back to Top button
+      document.getElementById('backToTopBtn').style.display = 'block';
     }
+
+    function scrollToTop() {
+  document.getElementById('top-section').scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+
+  // Hide the Back to Top button after scrolling
+  document.getElementById('backToTopBtn').style.display = 'none';
+}
   </script>
+
+<!----------PART TWO OF PROJECTS CODE----------------------------------------------------------->
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Add this to control positioning */
+  top: 100px; /* Adjust this value to move the buttons up or down */
+  }
+
+  section {
+    width: 100%;
+    position: relative; /* Add this to control positioning */
+  top: 100px; /* Adjust this value to move the buttons up or down */
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .product-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    position: relative; /* Add this to control positioning */
+  top: -100px; /* Adjust this value to move the buttons up or down */
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero Section 1 with Target -->
+<section id="project1" class="hero" style="background-image: url('https://post.healthline.com/wp-content/uploads/2021/05/mango-bowl-fruit-1296x728-body.jpg');">
+  <h1>Project 1</h1>
+  <p>Green Rustic Cottage Interior Design</p>
+</section>
+
+<!-- Two Column Section 1 -->
+<section style="display: flex; padding: 40px;">
+  <div style="flex: 1; padding: 100px;">
+    <h1>Nature-Inspired Palette</h1>
+    <p>The foundation of this design style is a soothing palette of greens, inspired by the 
+      lush countryside. Soft sage, moss, and olive tones dominate the walls and upholstery, 
+      creating a harmonious connection with the outdoors. These shades are complemented by 
+      neutrals such as creamy whites, warm beiges, and gentle grays, 
+      enhancing the overall tranquility of the space.</p>
+  </div>
+  <div style="flex: 1; padding: 10px;">
+    <img src="WhatsApp Image 2024-06-19 at 2.45.32 PM.jpeg" alt="Pears">
+  </div>
+</section>
+
+<!-- Two Column Section 2 -->
+<section style="display: flex; padding: 40px;">
+  <div style="flex: 1; padding: 100px;">
+    <img src="WhatsApp Image 2024-06-19 at 2.56.18 PM.jpeg" alt="Watermelon">
+  </div>
+  <div style="flex: 1; padding: 10px;">
+    <h1>Vintage Accents</h1>
+    <p>To enhance the rustic charm, vintage accents play a crucial role. Antique light fixtures, 
+      weathered mirrors, and aged metal hardware bring a nostalgic touch to the interior. 
+      These elements not only add visual interest but also create a lived-in, 
+      cozy ambiance that makes the cottage feel like home.</p>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section style="flex: 1; padding: 10px;">
+  <div style="display: flex; flex-wrap: wrap;">
+    <div style="flex: 2; padding: 10px;">
+      <img src="WhatsApp Image 2024-06-19 at 2.29.04 PM (2).jpeg" alt="Featured product" class="product-img">
+    </div>
+    <div style="flex: 1; padding: 10px;">
+      <img src="WhatsApp Image 2024-06-19 at 2.29.05 PM (1).jpeg" alt="Product" class="product-img">
+    </div>
+    <div style="flex: 1; padding: 10px;">
+      <img src="WhatsApp Image 2024-06-19 at 2.29.04 PM (3).jpeg" alt="Product" class="product-img">
+    </div>
+  </div>
+</section>
+
+<!-- Hero Section 2 with Target -->
+<section id="project2" class="hero" style="background-image: url('https://post.healthline.com/wp-content/uploads/2021/05/mango-bowl-fruit-1296x728-body.jpg');">
+  <h1>Project 2</h1>
+  <p>Subheading with description of your shopping site</p>
+</section>
+
+<!-- Two Column Section 1 -->
+<section style="display: flex; padding: 40px;">
+  <div style="flex: 1; padding: 10px;">
+    <p>A subheading for this section, as long or as short as you like</p>
+  </div>
+  <div style="flex: 1; padding: 10px;">
+    <img src="https://post.healthline.com/wp-content/uploads/2021/05/mango-bowl-fruit-1296x728-body.jpg" alt="Pears">
+  </div>
+</section>
+
+<!-- Two Column Section 2 -->
+<section style="display: flex; padding: 40px;">
+  <div style="flex: 1; padding: 10px;">
+    <img src="https://post.healthline.com/wp-content/uploads/2021/05/mango-bowl-fruit-1296x728-body.jpg" alt="Watermelon">
+  </div>
+  <div style="flex: 1; padding: 10px;">
+    <h2>Heading</h2>
+    <p>A subheading for this section, as long or as short as you like</p>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section style="padding: 40px;">
+  <h2>Section heading</h2>
+  <div style="display: flex; flex-wrap: wrap;">
+    <div style="flex: 2; padding: 10px;">
+      <img src="https://post.healthline.com/wp-content/uploads/2021/05/mango-bowl-fruit-1296x728-body.jpg" alt="Featured product" class="product-img">
+    </div>
+    <div style="flex: 1; padding: 10px;">
+      <img src="https://post.healthline.com/wp-content/uploads/2021/05/mango-bowl-fruit-1296x728-body.jpg" alt="Product" class="product-img">
+    </div>
+    <div style="flex: 1; padding: 10px;">
+      <img src="https://post.healthline.com/wp-content/uploads/2021/05/mango-bowl-fruit-1296x728-body.jpg" alt="Product" class="product-img">
+    </div>
+  </div>
+</section>
+
+<!-- Hero Section 3 with Target -->
+<section id="project3" class="hero" style="background-image: url('https://post.healthline.com/wp-content/uploads/2021/05/mango-bowl-fruit-1296x728-body.jpg');">
+  <h1>Project 3</h1>
+  <p>Subheading with description of your shopping site</p>
+</section>
+
+<!-- Two Column Section 1 -->
+<section style="display: flex; padding: 40px;">
+  <div style="flex: 1; padding: 10px;">
+    <p>A subheading for this section, as long or as short as you like</p>
+  </div>
+  <div style="flex: 1; padding: 10px;">
+    <img src="WhatsApp Image 2024-06-19 at 2.45.32 PM.jpeg" alt="Pears">
+  </div>
+</section>
+
+<!-- Two Column Section 2 -->
+<section style="display: flex; padding: 40px;">
+  <div style="flex: 1; padding: 10px;">
+    <img src="WhatsApp Image 2024-06-19 at 2.56.18 PM.jpeg" alt="Watermelon">
+  </div>
+  <div style="flex: 1; padding: 10px;">
+    <h2>Heading</h2>
+    <p>A subheading for this section, as long or as short as you like</p>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section style="flex: 1; padding: 10px;">
+  <h2>Section heading</h2>
+  <div style="display: flex; flex-wrap: wrap;">
+    <div style="flex: 2; padding: 10px;">
+      <img src="WhatsApp Image 2024-06-19 at 2.29.04 PM (2).jpeg" alt="Featured product" class="product-img">
+    </div>
+    <div style="flex: 1; padding: 10px;">
+      <img src="WhatsApp Image 2024-06-19 at 2.29.05 PM (1).jpeg" alt="Product" class="product-img">
+    </div>
+    <div style="flex: 1; padding: 10px;">
+      <img src="WhatsApp Image 2024-06-19 at 2.29.04 PM (3).jpeg" alt="Product" class="product-img">
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
+
